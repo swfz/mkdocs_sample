@@ -1,0 +1,15 @@
+diff --git utils/__init__.py utils/__init__.py
+index 1387739..96a89dd 100644
+--- utils/__init__.py
++++ utils/__init__.py
+@@ -134,6 +134,10 @@ def copy_media_files(from_dir, to_dir):
+                 source_path = os.path.join(source_dir, filename)
+                 output_path = os.path.join(output_dir, filename)
+                 copy_file(source_path, output_path)
++            if is_markdown_file(filename):
++                source_path = os.path.join(source_dir, filename)
++                output_path = os.path.join(output_dir, filename)
++                copy_file(source_path, output_path)
+ 
+ 
+ def get_html_path(path):

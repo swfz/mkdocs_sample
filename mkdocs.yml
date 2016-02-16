@@ -1,0 +1,12 @@
+site_name: My Docs
+site_name: sample
+site_description: mkdocsに日本語検索とスライド機能を追加したサンプル
+theme_dir: custom
+pages:
+  - index: 'index.md'
+  - sample: 'category/sample.md'
+  - slide: 'slide.md'
+  - README:
+    - remark: 'readme/remark.md'
+    - search: 'readme/search.md'
+
