@@ -45,8 +45,8 @@
   document.getElementsByTagName('body')[0].setAttribute("style","padding-top:0px");
 
   var mdFileName = ( queries["n"] )
-    ? "/" + queries["c"] + "/" + queries["n"] + ".md"
-    : "/" + queries["c"] + ".md"
+    ? "/mkdocs_sample/" + queries["c"] + "/" + queries["n"] + ".md"
+    : "/mkdocs_sample/" + queries["c"] + ".md"
 
   var slideshow = remark.create({sourceUrl: mdFileName });
 </script>
