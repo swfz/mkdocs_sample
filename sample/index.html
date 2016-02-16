@@ -157,6 +157,7 @@ var current = (function() {/*
 
 var path = current.replace(/\n|\r/g, "").replace(/.*- \/(.*)\/(.*)\/.*$/g, "$1");
 
+console.log(path);
 var params = path.split("/");
 var linkElement = document.getElementById("slideLink");
 if ( params[1] ) {
