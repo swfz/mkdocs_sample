@@ -6,4 +6,31 @@
 </div>
 {% endif %}
 
-{{ content }}
+{# Slide Page #}
+{% if meta.page|join("") == 'slide' %}
+  {% include "slide.html" %}
+{% else %}
+
+<a id="slideLink">
+  <span class="label label-info">Presentation Mode</span>
+</a>
+
+<script type="text/javascript">
+var current = (function() {/*
+"{{ current_page }}"
+*/}).toString();
+
+var path = current.replace(/\n|\r/g, "").replace(/.*- \/(.*)\/(.*)\/.*$/g, "$1");
+
+var params = path.split("/");
+var linkElement = document.getElementById("slideLink");
+if ( params[1] ) {
+  linkElement.setAttribute("href", "/slide/" + "?c=" + params[0] + "&n=" + params[1] );
+}
+else {
+  linkElement.setAttribute("href", "/slide/" + "?c=" + params[0] );
+}
+</script>
+  {{ content }}
+{% endif %}
+

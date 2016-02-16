@@ -4,9 +4,9 @@ site_description: mkdocsに日本語検索とスライド機能を追加した�
 theme_dir: custom
 pages:
   - index: 'index.md'
-  - sample: 'category/sample.md'
+  - sample: 'sample.md'
   - slide: 'slide.md'
   - README:
-    - remark: 'readme/remark.md'
-    - search: 'readme/search.md'
+    - 'スライド機能': 'readme/remark.md'
+    - '日本語検索': 'readme/search.md'
 
