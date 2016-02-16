@@ -155,10 +155,10 @@ console.log(path);
 var params = path.split("/");
 var linkElement = document.getElementById("slideLink");
 if ( params[1] ) {
-  linkElement.setAttribute("href", "/slide/" + "?c=" + params[0] + "&n=" + params[1] );
+  linkElement.setAttribute("href", "/slide" + "?c=" + params[0] + "&n=" + params[1] );
 }
 else {
-  linkElement.setAttribute("href", "/slide/" + "?c=" + params[0] );
+  linkElement.setAttribute("href", "/slide" + "?c=" + params[0] );
 }
 </script>
   <h1 id="mkdocs">MkDocs サンプル</h1>
@@ -236,5 +236,5 @@ patches/
 
 <!--
 MkDocs version : 0.15.2
-Build Date UTC : 2016-02-16 20:00:12.135514
+Build Date UTC : 2016-02-16 20:03:55.556211
 -->

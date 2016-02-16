@@ -26,10 +26,10 @@ console.log(path);
 var params = path.split("/");
 var linkElement = document.getElementById("slideLink");
 if ( params[1] ) {
-  linkElement.setAttribute("href", "/slide/" + "?c=" + params[0] + "&n=" + params[1] );
+  linkElement.setAttribute("href", "/slide" + "?c=" + params[0] + "&n=" + params[1] );
 }
 else {
-  linkElement.setAttribute("href", "/slide/" + "?c=" + params[0] );
+  linkElement.setAttribute("href", "/slide" + "?c=" + params[0] );
 }
 </script>
   {{ content }}
