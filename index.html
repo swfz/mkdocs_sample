@@ -149,7 +149,9 @@ var current = (function() {/*
 "
 */}).toString();
 
-var path = current.replace(/\n|\r/g, "").replace(/.*- \/(.*)\/(.*)\/.*$/g, "$1");
+var path = ( current.match(" - / ") )
+    ? 'index'
+    : current.replace(/\n|\r/g, "").replace(/.*- \/(.*)\/(.*)\/.*$/g, "$1");
 
 var params = path.split("/");
 var linkElement = document.getElementById("slideLink");
@@ -159,7 +161,7 @@ params.forEach(function(p){
   locationStr = locationStr.replace("/" + p,'');
 });
 
-slideLocationStr = ( locationStr + "/slide/" ).replace("//slide", "/slide");
+var slideLocationStr = ( locationStr + "/slide/" ).replace("//slide", "/slide");
 
 if ( params[1] ) {
   linkElement.setAttribute("href", slideLocationStr + "?c=" + params[0] + "&n=" + params[1] );
@@ -243,5 +245,5 @@ patches/
 
 <!--
 MkDocs version : 0.14.0
-Build Date UTC : 2016-02-17 04:36:00.732009
+Build Date UTC : 2016-02-17 05:33:39.580151
 -->
