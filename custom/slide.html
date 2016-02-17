@@ -11,9 +11,11 @@
   document.getElementsByTagName('body')[0].setAttribute("style","padding-top:0px");
 
   var locationStr = location.toString().replace(/\/slide.*/, "");
-  var mdFileLocation = ( queries["n"] )
-    ? locationStr + "/" + queries["c"] + "/" + queries["n"] + ".md"
-    : locationStr + "/" + queries["c"] + ".md"
+  var mdFileLocation = ( queries["c"] ) ?
+    ( queries["n"] )
+      ? locationStr + "/" + queries["c"] + "/" + queries["n"] + ".md"
+      : locationStr + "/" + queries["c"] + ".md"
+    : locationStr + "/notfound.md";
 
   var slideshow = remark.create({sourceUrl: mdFileLocation });
 </script>

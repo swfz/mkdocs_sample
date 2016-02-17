@@ -20,7 +20,9 @@ var current = (function() {/*
 "{{ current_page }}"
 */}).toString();
 
-var path = current.replace(/\n|\r/g, "").replace(/.*- \/(.*)\/(.*)\/.*$/g, "$1");
+var path = ( current.match(" - / ") )
+    ? 'index'
+    : current.replace(/\n|\r/g, "").replace(/.*- \/(.*)\/(.*)\/.*$/g, "$1");
 
 var params = path.split("/");
 var linkElement = document.getElementById("slideLink");
