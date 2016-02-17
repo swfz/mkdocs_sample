@@ -151,14 +151,21 @@ var current = (function() {/*
 
 var path = current.replace(/\n|\r/g, "").replace(/.*- \/(.*)\/(.*)\/.*$/g, "$1");
 
-console.log(path);
 var params = path.split("/");
 var linkElement = document.getElementById("slideLink");
+
+var locationStr = location.toString();
+params.forEach(function(p){
+  locationStr = locationStr.replace("/" + p,'');
+});
+
+slideLocationStr = ( locationStr + "/slide/" ).replace("//slide", "/slide");
+
 if ( params[1] ) {
-  linkElement.setAttribute("href", "/mkdocs_sample/slide" + "?c=" + params[0] + "&n=" + params[1] );
+  linkElement.setAttribute("href", slideLocationStr + "?c=" + params[0] + "&n=" + params[1] );
 }
 else {
-  linkElement.setAttribute("href", "/mkdocs_sample/slide" + "?c=" + params[0] );
+  linkElement.setAttribute("href", slideLocationStr + "?c=" + params[0] );
 }
 </script>
   <h1 id="mkdocs">MkDocs サンプル</h1>
@@ -235,6 +242,6 @@ patches/
 </html>
 
 <!--
-MkDocs version : 0.15.2
-Build Date UTC : 2016-02-16 20:08:26.054501
+MkDocs version : 0.14.0
+Build Date UTC : 2016-02-17 04:13:51.757742
 -->

@@ -37,13 +37,8 @@
         }, 
         {
             "location": "/sample/#h2", 
-            "text": "list  list  list2", 
+            "text": "list  list  list2      h3   aaa  bbb    my $test = 'test';\nprint $test;", 
             "title": "h2"
-        }, 
-        {
-            "location": "/sample/#h3", 
-            "text": "aaa  bbb    my $test = 'test';\nprint $test;", 
-            "title": "h3"
         }, 
         {
             "location": "/sample/#h2-2", 

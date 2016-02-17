@@ -1,0 +1,30 @@
+diff --git search.js search.js
+index 0bdb5b0..2a26bbc 100644
+--- search.js
++++ search.js
+@@ -1,9 +1,12 @@
+ require([
+     base_url + '/mkdocs/js/mustache.min.js',
+     base_url + '/mkdocs/js/lunr-0.5.7.min.js',
++    base_url + '/mkdocs/js/lunr.stemmer.support.js',
++    base_url + '/mkdocs/js/tinyseg2.js',
++    base_url + '/mkdocs/js/lunr.jp.js',
+     'text!search-results-template.mustache',
+     'text!../search_index.json',
+-], function (Mustache, lunr, results_template, data) {
++], function (Mustache, lunr, stemmerSupport, tiny, jp, results_template, data) {
+    "use strict";
+ 
+     function getSearchTerm()
+@@ -20,7 +23,11 @@ require([
+         }
+     }
+ 
++    stemmerSupport(lunr);
++    jp(lunr);
++
+     var index = lunr(function () {
++        this.use(lunr.jp);
+         this.field('title', {boost: 10});
+         this.field('text');
+         this.ref('location');

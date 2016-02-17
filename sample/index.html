@@ -157,14 +157,21 @@ var current = (function() {/*
 
 var path = current.replace(/\n|\r/g, "").replace(/.*- \/(.*)\/(.*)\/.*$/g, "$1");
 
-console.log(path);
 var params = path.split("/");
 var linkElement = document.getElementById("slideLink");
+
+var locationStr = location.toString();
+params.forEach(function(p){
+  locationStr = locationStr.replace("/" + p,'');
+});
+
+slideLocationStr = ( locationStr + "/slide/" ).replace("//slide", "/slide");
+
 if ( params[1] ) {
-  linkElement.setAttribute("href", "/mkdocs_sample/slide" + "?c=" + params[0] + "&n=" + params[1] );
+  linkElement.setAttribute("href", slideLocationStr + "?c=" + params[0] + "&n=" + params[1] );
 }
 else {
-  linkElement.setAttribute("href", "/mkdocs_sample/slide" + "?c=" + params[0] );
+  linkElement.setAttribute("href", slideLocationStr + "?c=" + params[0] );
 }
 </script>
   <h1 id="sample">sample</h1>
