@@ -30,7 +30,7 @@ params.forEach(function(p){
   locationStr = locationStr.replace("/" + p,'');
 });
 
-slideLocationStr = ( locationStr + "/slide/" ).replace("//slide", "/slide");
+var slideLocationStr = ( locationStr + "/slide/" ).replace("//slide", "/slide");
 
 if ( params[1] ) {
   linkElement.setAttribute("href", slideLocationStr + "?c=" + params[0] + "&n=" + params[1] );
