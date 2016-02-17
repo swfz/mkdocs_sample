@@ -2,6 +2,7 @@ site_name: My Docs
 site_name: sample
 site_description: mkdocsに日本語検索とスライド機能を追加したサンプル
 theme_dir: custom
+repo_url: https://github.com/swfz/mkdocs_sample.git
 pages:
   - index: 'index.md'
   - sample: 'sample.md'
